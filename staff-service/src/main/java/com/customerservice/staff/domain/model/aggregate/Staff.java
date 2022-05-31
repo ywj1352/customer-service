@@ -3,7 +3,7 @@ package com.customerservice.staff.domain.model.aggregate;
 import com.customerservice.staff.domain.command.CreateStaffCommand;
 
 public class Staff {
-
+	// 唯一Id
 	private StaffId staffId;
 	private String staffName;
 	private String description;

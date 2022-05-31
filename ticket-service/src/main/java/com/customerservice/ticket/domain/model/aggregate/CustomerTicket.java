@@ -30,6 +30,10 @@ import java.util.UUID;
 public class CustomerTicket {
 
     private TicketId ticketId;// 客服工单唯一编号
+    /**
+     * 一次CustomerTicket 必然只存在一次 Consultation
+     * 所以这个是专项实体
+     */
     private Consultation consultation;// 用户咨询
     private StaffProfile staff;// 客服人员
     private TicketStatus status;// 工单状态
