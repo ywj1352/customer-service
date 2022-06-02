@@ -35,6 +35,7 @@ public class CustomerTicket {
      * 所以这个是专项实体
      */
     private Consultation consultation;// 用户咨询
+    // Profile 对象 就是从 别的 聚合中获取 的映射对象
     private StaffProfile staff;// 客服人员
     private TicketStatus status;// 工单状态
     private List<Message> messages;// 工单详细消息列表

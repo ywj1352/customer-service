@@ -52,10 +52,10 @@ public class CustomerTicketCommandService {
 		applyTicketCommand.setOrder(order);
 
 		// 调用StaffOrder限界上下文获取StaffOrderProfile并填充ApplyTicketCommand
-//		StaffProfile staff = aclStaffService.getOptimalStaff(applyTicketCommand.getAccount(),
-//				applyTicketCommand.getOrder(), applyTicketCommand.getInquire());
+		StaffProfile staff = aclStaffService.getOptimalStaff(applyTicketCommand.getAccount(),
+				applyTicketCommand.getOrder(), applyTicketCommand.getInquire());
 		// mock
-		StaffProfile staff = new StaffProfile("staff1", "staffname1", "description1");
+		//StaffProfile staff = new StaffProfile("staff1", "staffname1", "description1");
 		applyTicketCommand.setStaff(staff);
 
 		// 创建CustomerTicket
@@ -87,6 +87,7 @@ public class CustomerTicketCommandService {
 		// 根据TicketId获取CustomerTicket
 		CustomerTicket customerTicket = customerTicketRepository.findByTicketId(finishTicketCommand.getTicketId());
 
+		// 每个聚合 可以处理当前 聚合内部的业务
 		// 处理结束CustomerTicket业务逻辑
 		customerTicket.finishTicket(finishTicketCommand);
 
